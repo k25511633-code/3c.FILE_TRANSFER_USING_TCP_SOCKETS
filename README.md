@@ -14,17 +14,17 @@ To write a python program for creating File Transfer using TCP Sockets Links
 Server.py
 ```
 
-import socket
-port = 60000
-s = socket.socket()
-host = socket.gethostname()
-s.bind((host, port))
-s.listen(5)
+import socket 
+port = 60000 
+s = socket.socket() 
+host = socket.gethostname() 
+s.bind((host, port)) 
+s.listen(5) 
 while True:
-    conn, addr = s.accept()
+    conn, addr = s.accept() 
     data = conn.recv(1024)
     print('Server received', repr(data))
-    filename='file.txt'
+    filename='mytext.txt'
     f = open(filename,'rb')
     l = f.read(1024)
     while (l):
